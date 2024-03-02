@@ -23,8 +23,8 @@ There is a components folder with multiple components used in both pages. This i
 3. NavButton - this contains both the previous and next buttons. These are contained within the same component
 4. Pagination - this contains the component with buttons denoting the available pages. There are 4 pages that are shwon at any given point in time to keep the interface clean
 5. PokemonCard - this contains the stars alongside the pokemon's name. This component includes some of the handler functions to check whether a pokemon has been starred or not
-6. StatsCard - this contains a component re-used a few times to show stats related to the pokemon
-7. Tag - this is a simple tag used to re-used multiple times to show the pokemon's types and different statistics
+6. Tag - this is a simple tag used to re-used multiple times to show the pokemon's types and different statistics
+7. HeaderTag - a simple tag use to show headers for users to more clearly understand what each stat is related to
 
 ## Interfaces
 
@@ -48,3 +48,16 @@ I abstracted away functions I believed would be re-used or had a clear potential
 ## CI/CD
 
 I leveraged GitHub Actions to automate running tests and deploying the project to GitHub.
+
+
+## Process
+I am including this section to give you better context over how I work and think through things.
+
+Building this involved; 
+- drafting an initial sketch on figma, building a functional version (version 1). The idea behind this was to get something that works and looks fairly presentable deployed as quickly as possible
+
+- re-evaluating the design, using pokemon card's as inspiration and reformatting version 1 to came up with a slicker, less crowded version that I believed best resembled a pokemon card without making the page too crowded. 
+
+
+Version 1: https://ibb.co/9qmmLQy
+Version 2: https://ibb.co/NsG6bX1 Figma Sketch: https://www.figma.com/file/DszwN8obklUgEF9lwVggTQ/Untitled?type=design&node-id=0%3A1&mode=design&t=vdQe2O5gZy3CPRy6-1

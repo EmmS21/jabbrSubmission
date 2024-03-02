@@ -3,7 +3,7 @@
 </script>
 
 <div
-  class="inline-block bg-lime-500 text-white px-3 py-1 rounded-full text-sm font-medium"
+  class="inline-block bg-sky-200 text-black px-3 py-1 rounded-full text-sm font-bold"
 >
   {name}
 </div>
