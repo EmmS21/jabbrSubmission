@@ -21,6 +21,11 @@ jobs:
 
       - name: Run tests
         run: npm test
+
+      - name: Print Environment Variables
+        run: |
+          echo "VERCEL_TOKEN: $VERCEL_TOKEN"
+          env  # Print all environment variables
         
       - name: Deploy to Vercel
         uses: amondnet/vercel-action@v25.1.1
