@@ -1,7 +1,12 @@
 <script>
-  export let onClick;
+  /**
+   * @type {any}
+   */
+   export let onClick;
 </script>
 
+<!-- svelte-ignore a11y-click-events-have-key-events -->
+<!-- svelte-ignore a11y-no-static-element-interactions -->
 <svg
   xmlns="http://www.w3.org/2000/svg"
   viewBox="0 0 24 24"

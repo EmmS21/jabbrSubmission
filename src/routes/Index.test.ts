@@ -1,4 +1,4 @@
-import { render, waitFor, fireEvent, screen } from "@testing-library/svelte";
+import { render, fireEvent, screen } from "@testing-library/svelte";
 import "@testing-library/jest-dom";
 import Page from "./+page.svelte";
 import axios from "axios";

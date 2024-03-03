@@ -1,5 +1,5 @@
 <script lang="ts">
-  import { onMount, afterUpdate } from "svelte";
+  import { onMount, afterUpdate, createEventDispatcher } from "svelte";
   import { goto } from "$app/navigation";
   import FilledStarIcon from "./FilledStarIcon.svelte";
   import StarIcon from "./StarIcon.svelte";
@@ -11,9 +11,10 @@
   } from "$lib/index";
 
   export let name: string;
-  export let number: string;
 
   let isStarred: boolean = false;
+  const dispatch = createEventDispatcher();
+
 
   onMount(() => {
     checkLocalStorage(name);
@@ -25,18 +26,22 @@
     isStarred = getIsStarred();
   });
 
-  const handleToggleStar = (event: MouseEvent, pokemonName: string) => {
-    isStarred = toggleStar(name, isStarred);
+  const handleToggleStar = (event: MouseEvent) => {
+    toggleStar(name, isStarred);
+    checkLocalStorage(name);
+    isStarred = getIsStarred();
+    dispatch('starChange');
     event.stopPropagation();
   };
 
   const navigateToDetail = () => {
-    goto(`/pokemon/${number}`);
+    goto(`/pokemon/${name}`);
   };
 </script>
 
-<div
+<button
   class="relative card p-2 sm:p-4 m-1 sm:m-2 bg-gray-200 shadow-lg rounded h-full min-h-0 whitespace-normal overflow-auto cursor-pointer"
+  role="pokemon-card"
   on:click={navigateToDetail}
 >
   <StarIcon onClick={(event) => handleToggleStar(event, name)} />
@@ -44,4 +49,4 @@
     <FilledStarIcon onClick={(event) => handleToggleStar(event, name)} />
   {/if}
   <p style="word-wrap: break-word;">{toCamelCase(name)}</p>
-</div>
+  </button>

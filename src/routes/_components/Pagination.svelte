@@ -15,8 +15,6 @@
       startPage = 1;
       endPage = Math.min(pagesToShow, totalPages);
     }
-
-    // Adjust endPage when nearing the end of totalPages to ensure the range includes totalPages
     if (totalPages - currentPage < Math.floor(pagesToShow / 2)) {
       endPage = totalPages;
       startPage = Math.max(totalPages - pagesToShow + 1, 1);

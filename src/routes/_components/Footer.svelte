@@ -1,6 +1,9 @@
 <script>
   import Tag from "./Tag.svelte";
-  export let stats = [];
+  /**
+   * @type {any[]}
+   */
+   export let stats = [];
 </script>
 
 <div class="bg-gray-200 p-4 w-full">

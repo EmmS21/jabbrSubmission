@@ -61,3 +61,10 @@ Building this involved;
 
 Version 1: https://ibb.co/9qmmLQy
 Version 2: https://ibb.co/NsG6bX1 Figma Sketch: https://www.figma.com/file/DszwN8obklUgEF9lwVggTQ/Untitled?type=design&node-id=0%3A1&mode=design&t=vdQe2O5gZy3CPRy6-1
+
+### Version 3
+If I am enabling users to star Pokemon as favorites, placing myself in the shoes of this hypothetical end user I may want a way to filter for all of the Pokemon that I have starred. 
+
+I implemented functionality to filter all starred pokemon using a toggle. Since the current architecture is designed to store a favorited pokemon in local storage, I simply check for all pokemon stored in localStorage and return these when the user filters for favorited pokemon
+Before: https://ibb.co/9ZYQ8bK 
+After: https://ibb.co/W3jGqCS

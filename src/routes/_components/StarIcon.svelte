@@ -1,7 +1,11 @@
 <script>
+// @ts-nocheck
+  // @ts-ignore
   export let onClick;
 </script>
 
+<!-- svelte-ignore a11y-no-static-element-interactions -->
+<!-- svelte-ignore a11y-click-events-have-key-events -->
 <svg
   xmlns="http://www.w3.org/2000/svg"
   fill="none"

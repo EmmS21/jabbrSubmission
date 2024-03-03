@@ -3,6 +3,7 @@ export interface PokemonApiResponse {
   next: string | null;
   previous: string | null;
   results: Array<{ name: string; url: string }>;
+  starredPokemons?: Array<string>
 }
 
 export interface PokemonService {
@@ -28,4 +29,10 @@ export interface UpdateAndFetch {
     limit?: number,
     direction?: "next" | "previous" | "initial",
   ): Promise<void>;
+}
+
+export interface StarredEvent {
+  detail: {
+    direction: boolean;
+  };
 }
