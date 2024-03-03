@@ -21,9 +21,3 @@ jobs:
 
       - name: Run tests
         run: npm test
-
-      - name: Deploy to Vercel
-        uses: amondnet/vercel-action@v25.1.1
-        with:
-          vercel-project-name: pokeapi
-          vercel-token: QQtQaLXP4eBHABOMPWxWcWFd
