@@ -21,3 +21,8 @@ jobs:
 
       - name: Run tests
         run: npm test
+        
+      - name: Deploy to Vercel
+        uses: amondnet/vercel-action@v25.1.1
+        with:
+          vercel-token: ${{ env.VERCEL_TOKEN }}
