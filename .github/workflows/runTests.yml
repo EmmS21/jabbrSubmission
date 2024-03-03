@@ -22,10 +22,12 @@ jobs:
       - name: Run tests
         run: npm test
 
-      - name: Print Environment Variables
+      - name: Print Environment Variables and Secrets
         run: |
-          echo "VERCEL_TOKEN: $VERCEL_TOKEN"
+          echo "Printing Environment Variables:"
           env  # Print all environment variables
+          echo "Printing Secrets:"
+          printenv | grep -E '^(.*?)=(.*)$'
         
       - name: Deploy to Vercel
         uses: amondnet/vercel-action@v25.1.1
