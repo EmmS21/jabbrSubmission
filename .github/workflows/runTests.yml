@@ -25,5 +25,5 @@ jobs:
       - name: Deploy to Vercel
         uses: amondnet/vercel-action@v25.1.1
         with:
-          name: pokeapi
+          vercel-project-name: pokeapi
           vercel-token: ${{ secrets.VERCEL_TOKEN }}
