@@ -33,38 +33,3 @@ Since this is a Typescript project, interfaces have been implemented to define t
 ## Tests
 
 A few unit tests have been implemented, specifically to test some UI components related to the index page, primarily because this is where a bulk of the logic occurs
-
-## Lib functions
-
-I abstracted away functions I believed would be re-used or had a clear potential to be re-used in multiple components assuming this project where to grow larger.
-
-## Some Design considerations
-
-1. In addition to have a Next and Previous button I thought it necessary to implement a method to; i. view the page number you are currently on and ii. skip a few pages by clicking ahead a few pages. I limited this view to 4 pages at a time to keep the interface clean. As an end user I would want to know what page I was as I was navigating.
-2. When you navigate pages I persist this data using URL parameters. The rationale here is that if I click on a Pokemon and click the back button I don't want to be redirected back to page, I want to be redirected to the page I was on. The trade off is that when I click refresh I will not be redirected to page 1, I will instead remain on the page I had navigated to.
-3. I am persisting data regarding whether a pokemon has been starred using localStorage. This was the simplest option given the size of the data and small size of the project (ie. as opposed to indexeddb, sessionStorage, cookies etc.)
-4. I opted towards designing my Tags and other components using Tailwind to avoid relying on external libraries to have greater design control given the simplicity of the components I was building
-
-## CI/CD
-
-I leveraged GitHub Actions to automate running tests and deploying the project to GitHub.
-
-
-## Process
-I am including this section to give you better context over how I work and think through things.
-
-Building this involved; 
-- drafting an initial sketch on figma, building a functional version (version 1). The idea behind this was to get something that works and looks fairly presentable deployed as quickly as possible
-
-- re-evaluating the design, using pokemon card's as inspiration and reformatting version 1 to came up with a slicker, less crowded version that I believed best resembled a pokemon card without making the page too crowded. 
-
-
-Version 1: https://ibb.co/9qmmLQy
-Version 2: https://ibb.co/NsG6bX1 Figma Sketch: https://www.figma.com/file/DszwN8obklUgEF9lwVggTQ/Untitled?type=design&node-id=0%3A1&mode=design&t=vdQe2O5gZy3CPRy6-1
-
-### Version 3
-If I am enabling users to star Pokemon as favorites, placing myself in the shoes of this hypothetical end user I may want a way to filter for all of the Pokemon that I have starred. 
-
-I implemented functionality to filter all starred pokemon using a toggle. Since the current architecture is designed to store a favorited pokemon in local storage, I simply check for all pokemon stored in localStorage and return these when the user filters for favorited pokemon
-Before: https://ibb.co/9ZYQ8bK 
-After: https://ibb.co/W3jGqCS
